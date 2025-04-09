@@ -2,37 +2,39 @@ name: Lighthouse CI
 
 on:
   push:
-    branches:
-      - '*' # Запускать для всех веток
+    branches: ['*']
   pull_request:
-    branches:
-      - '*' # Запускать для всех PR
+    branches: ['*']
 
 jobs:
   lighthouse-ci:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: '16'
+          node-version: '18' # LTS-версия
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm install
 
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli
+
+      - name: Verify LHCI installation
+        run: |
+          echo "LHCI path: $(which lhci)"
+          lhci --version
+
       - name: Run Lighthouse CI
         run: lhci autorun --config .lighthouserc.json
 
-      - name: Verify results directory
-        run: |
-          ls -la ./lighthouse-results
-          echo "Files count: $(ls ./lighthouse-results | wc -l)"
-
-      - name: Upload artifact
+      - name: Upload results
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: lighthouse-results
