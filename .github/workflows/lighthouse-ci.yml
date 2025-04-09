@@ -19,22 +19,21 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16' # Укажите вашу версию Node.js
+          node-version: '16'
 
       - name: Install dependencies
-        run: |
-          npm install
+        run: npm install
 
       - name: Run Lighthouse CI
-        run: |
-          lhci autorun --config .lighthouserc.json
+        run: lhci autorun --config .lighthouserc.json
 
-      - name: Check Lighthouse results
+      - name: Verify results directory
         run: |
-          ls ./lighthouse-results  # Проверка содержимого папки
+          ls -la ./lighthouse-results
+          echo "Files count: $(ls ./lighthouse-results | wc -l)"
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: lighthouse-results
-          path: ./lighthouse-results/* # Путь для загрузки артефактов
+          path: ./lighthouse-results/
