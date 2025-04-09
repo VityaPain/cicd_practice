@@ -11,31 +11,39 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1. Подготовка репозитория
       - uses: actions/checkout@v4
 
+      # 2. Установка Node.js (LTS-версия)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18' # LTS-версия
+          node-version: '20'
           cache: 'npm'
 
+      # 3. Установка зависимостей (включая LHCI)
       - name: Install dependencies
-        run: npm install
-
-      - name: Install Lighthouse CI
-        run: npm install -g @lhci/cli
-
-      - name: Verify LHCI installation
         run: |
-          echo "LHCI path: $(which lhci)"
-          lhci --version
+          npm install
+          npm install -g @lhci/cli
 
+      # 4. Создание папки для отчётов (если её нет)
+      - name: Create output directory
+        run: mkdir -p ./lighthouse-results
+
+      # 5. Запуск Lighthouse с явным указанием папки
       - name: Run Lighthouse CI
-        run: lhci autorun --config .lighthouserc.json
+        run: lhci autorun --config .lighthouserc.json --outputDir=./lighthouse-results
 
-      - name: Upload results
-        if: success()
+      # 6. Проверка содержимого папки (для отладки)
+      - name: Debug output files
+        run: |
+          echo "Файлы в lighthouse-results:"
+          ls -la ./lighthouse-results
+
+      # 7. Загрузка результатов как артефакта
+      - name: Upload Lighthouse results
         uses: actions/upload-artifact@v4
         with:
-          name: lighthouse-results
-          path: ./lighthouse-results/
+          name: lighthouse-reports
+          path: ./lighthouse-results/*
