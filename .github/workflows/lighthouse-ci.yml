@@ -3,10 +3,10 @@ name: Lighthouse CI
 on:
   push:
     branches:
-      - '*' # Запускать на всех ветках
+      - '*' # Запускать для всех веток
   pull_request:
     branches:
-      - '*' # Запускать на всех ветках, на которые созданы PR
+      - '*' # Запускать для всех PR
 
 jobs:
   lighthouse-ci:
@@ -29,8 +29,12 @@ jobs:
         run: |
           lhci autorun --config .lighthouserc.json
 
-      - name: Upload Lighthouse Results
-        uses: actions/upload-artifact@v2
+      - name: Check Lighthouse results
+        run: |
+          ls ./lighthouse-results  # Проверка содержимого папки
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
         with:
           name: lighthouse-results
-          path: ./lighthouse-results # Путь, куда сохраняются результаты
+          path: ./lighthouse-results/* # Путь для загрузки артефактов
