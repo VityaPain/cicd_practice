@@ -1,0 +1,36 @@
+name: Lighthouse CI
+
+on:
+  push:
+    branches:
+      - '*' # Запускать на всех ветках
+  pull_request:
+    branches:
+      - '*' # Запускать на всех ветках, на которые созданы PR
+
+jobs:
+  lighthouse-ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16' # Укажите вашу версию Node.js
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Run Lighthouse CI
+        run: |
+          lhci autorun --config .lighthouserc.json
+
+      - name: Upload Lighthouse Results
+        uses: actions/upload-artifact@v2
+        with:
+          name: lighthouse-results
+          path: ./lighthouse-results # Путь, куда сохраняются результаты
