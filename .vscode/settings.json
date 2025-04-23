@@ -40,7 +40,6 @@
 	"workbench.colorTheme": "Omni",
 	//Разрешить уменьшение размера вкладок, когда доступного места недостаточно для отображения всех вкладок одновременно.
 	"workbench.editor.tabSizing": "shrink",
-	"workbench.activityBar.visible": true,
 	"workbench.iconTheme": "material-icon-theme",
 	"workbench.startupEditor": "newUntitledFile",
 
