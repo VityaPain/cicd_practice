@@ -13,7 +13,7 @@ const Hamburger = () => {
 
 			{isShow && (
 				<ul className='absolute rounded-xl bg-white shadow-lg p-4 w-32 right-0 keyframe'>
-					{Array(5)
+					{Array(10)
 						.fill('')
 						.map((_, idx) => (
 							<li key={`hamb ${idx}`}>
