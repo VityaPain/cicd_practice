@@ -24,7 +24,7 @@ const Books = () => {
 			<p style={{ color: '#fff' }}>
 				Вычисление числа PI при помощи метода Монте-Карло
 			</p>
-			<p style={{ color: '#fff' }}>{getPI(1000)}</p>
+			<p style={{ color: '#fff' }}>{getPI(1000000)}</p>
 		</Layout>
 	)
 }
