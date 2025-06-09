@@ -1,2 +1,1 @@
-export const list = ['Admin', 'Comics', '', 'Films', 'Shop']
-
+export const list = ['Books', 'Films']

@@ -11,28 +11,22 @@ import t5Img from '../../../../assets/images/thumbnails/img5.jpg'
 const initialSlides = [
 	{
 		_id: 'wef2we',
-		thumbnailPath: t1Img,
-		videoUrl: 'https://youtu.be/aUi6fQRUP1o',
+		thumbnailPath:
+			'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdthCPTSACMD11puVwnrQsfYwyMMx8SDaqTA&s',
+		videoUrl:
+			'https://sso.kinopoisk.ru/install?uuid=fd9080fe-7312-4aba-8e66-afef6dc30a5e',
 	},
 	{
 		_id: '124fqw',
-		thumbnailPath: t2Img,
-		videoUrl: 'https://youtu.be/RSwtAdKKekw',
+		thumbnailPath:
+			'https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/772093e4-7f68-49aa-a805-d654693aee26/600x900',
+		videoUrl: 'https://www.kinopoisk.ru/film/312/',
 	},
 	{
 		_id: '125fqw',
-		thumbnailPath: t3Img,
-		videoUrl: 'https://youtu.be/Cter-6KlOTs',
-	},
-	{
-		_id: '53uyi5k',
-		thumbnailPath: t4Img,
-		videoUrl: 'https://youtu.be/_shFpVWbBLo',
-	},
-	{
-		_id: 'w*xfgr',
-		thumbnailPath: t5Img,
-		videoUrl: 'https://youtu.be/KoNKWAp3gbk',
+		thumbnailPath:
+			'https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/e410c71f-baa1-4fe5-bb29-aedb4662f49b/600x900',
+		videoUrl: 'https://www.kinopoisk.ru/film/3498/',
 	},
 ]
 

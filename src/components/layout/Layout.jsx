@@ -7,10 +7,10 @@ import SocialMedia from './SocialMedia'
 const Layout = ({ children }) => {
 	return (
 		<div
-			className='p-12 relative bg-cover bg-no-repeat'
+			className='p-6 relative bg-cover bg-no-repeat'
 			style={{
-				height: '100vh',
-				backgroundImage: `url(${BgImage})`,
+				backgroundImage: `url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGgOYItNZTeogD10KzxKh3pKr2_yvVwUzwFA&s)`,
+				height: '100%',
 			}}
 		>
 			<div className='gradient' />

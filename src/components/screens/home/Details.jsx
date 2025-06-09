@@ -7,19 +7,12 @@ const Details = () => {
 				className='pr-2'
 				style={{ borderRight: '2px solid rgba(255, 255, 255, .3)' }}
 			>
-				2021
-			</div>
-			<div
-				className='px-2'
-				style={{ borderRight: '2px solid rgba(255, 255, 255, .3)' }}
-			>
-				Bubble Studios
+				2025
 			</div>
 			<div className='px-2'>
 				<span className='bg-white text-black rounded-sm px-2 py-1 mr-2'>
 					КиноПоиск
 				</span>
-				<span>7.1</span>
 			</div>
 		</div>
 	)
