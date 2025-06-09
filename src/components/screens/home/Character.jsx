@@ -1,9 +1,8 @@
 import React from 'react'
-import CharacterImg from '../../../assets/images/MayorGrom.png'
 
 const Character = () => {
 	return (
-		<div className='absolute -bottom-2 -right-12 w-1/2'>
+		<div className='absolute -right-12 w-1/2' style={{ top: '40%' }}>
 			<img
 				draggable={false}
 				alt=''

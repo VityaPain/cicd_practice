@@ -28,6 +28,24 @@ const initialSlides = [
 			'https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/e410c71f-baa1-4fe5-bb29-aedb4662f49b/600x900',
 		videoUrl: 'https://www.kinopoisk.ru/film/3498/',
 	},
+	{
+		_id: '126fqw',
+		thumbnailPath:
+			'https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/0e569ebd-0639-416b-92c5-2afffbd5d089/600x900',
+		videoUrl: 'https://www.kinopoisk.ru/film/278522/',
+	},
+	{
+		_id: '127fqw',
+		thumbnailPath:
+			'https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/dd195023-81e0-42bc-9b33-e86ac8abf30e/600x900',
+		videoUrl: 'https://www.kinopoisk.ru/film/408876/',
+	},
+	{
+		_id: '128fqw',
+		thumbnailPath:
+			'https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/ee1276c4-6e67-45cd-94db-8bd47bb21da4/600x900',
+		videoUrl: 'https://www.kinopoisk.ru/film/694633/',
+	},
 ]
 
 const Carousel = () => {
