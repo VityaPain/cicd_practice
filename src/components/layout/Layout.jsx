@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
 			className='p-6 relative bg-cover bg-no-repeat'
 			style={{
 				backgroundImage: `url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGgOYItNZTeogD10KzxKh3pKr2_yvVwUzwFA&s)`,
-				height: '100%',
+				height: '100vh',
 			}}
 		>
 			<div className='gradient' />
