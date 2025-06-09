@@ -60,6 +60,6 @@ code {
 
 .gradient {
 	@apply absolute w-full h-full top-0 left-0;
-	background: linear-gradient(220deg, #202f43, #3a5b85);
+	background: linear-gradient(220deg, #3f4348, #6c7a8b);
 	opacity: 0.85;
 }

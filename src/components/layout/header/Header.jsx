@@ -6,7 +6,7 @@ import Navigation from './navigation/Navigation'
 const Header = () => {
 	return (
 		<div className='flex justify-between items-center'>
-			<Logo />
+			{/* <Logo /> */}
 			<Navigation />
 			<Hamburger />
 		</div>
